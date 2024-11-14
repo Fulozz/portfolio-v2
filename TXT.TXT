@@ -1,3 +1,3 @@
-FAZER PAGINA DE CARD para apresentação inicial pessoal 
+# FAZER PAGINA DE CARD para apresentação inicial pessoal 
 
-Nome, foto, número de contato e email, junto com algumas informações
+# Nome, foto, número de contato e email, junto com algumas informações
