@@ -24,8 +24,8 @@ export default function Tech() {
       <div className="grid grid-cols-3 lg:grid-cols-7 gap-1">
       { techs.map((tech, index) => {
         return(
-        <div className='items-center mx-4 flex-1 '> 
-          <Image src={tech.image} alt="javascript" key={index} className='h-[100px] w-auto'/> 
+        <div className='items-center mx-4 flex-1 ' key={index} > 
+          <Image src={tech.image} alt="javascript" className='h-[100px] w-auto'/> 
         </div>
         )
       })}
