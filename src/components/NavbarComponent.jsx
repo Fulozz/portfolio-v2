@@ -2,18 +2,19 @@
 import React, { useState } from 'react'
 import ThemeToggle from './theme/ThemeToggle'
 import { Menu, X } from 'lucide-react';
-
+import resume from "./assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"
+import DownloadLink from "react-download-link";
 export default function NavbarComponent() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
     const navItems = [
         {
             name: 'Home',
-            href: '/'
+            href: '/',
         },
         {
             name: 'Sobre',
-            href: '/sobre'
+            href: '/sobre',
         },
         {
             name: 'Projetos',
@@ -21,8 +22,13 @@ export default function NavbarComponent() {
         },
         {
             name: 'Contato',
-            href: '/contato'
-        }
+            href: '/contato',
+        },
+        {
+          name: 'Curriculo',
+          href: "./assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf",
+          download: true
+      }
     ]
   return (
     <div className="flex items-center justify-between  text-black dark:text-white h-20 py-2 px-8 mx-[60px] my-4 ">
@@ -30,14 +36,19 @@ export default function NavbarComponent() {
             <a href="#" className='font-semibold w-20'> <img src='/logo.png' /></a>
         </div>
         <div className=" items-center hidden md:flex lg:flex">
+        <DownloadLink
+                label="Curriculo"
+                filename={resume}
+                exportFile={() => Promise.resolve("cached data here …")}
+            />
             {navItems.map((item, index) => {
                 return (
-                    <a key={index} href={item.href} className='mx-4 font-normal text-slate-500 hover:text-slate-300'>{item.name}</a>
+                    <a key={index} href={item.href} className='mx-4 font-normal text-slate-300 hover:text-slate-300' download={item.download}>{item.name}</a>
                 )
             })}
             <ThemeToggle />
         </div>
-        <div className={`fixed top-0 left-0 w-full h-screen md:hidden bg-gray-900/80 z-50 transition duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`fixed top-0 left-0 w-full h-screen md:hidden bg-gray-900/90 z-50 transition duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'}`}>
         
           <div className="flex flex-col items-center justify-center text-center h-full">
             <ul className="space-y-4 items-center">
@@ -56,8 +67,8 @@ export default function NavbarComponent() {
             <ThemeToggle />
           </div>
         </div>
-        <div className="md:hidden lg:hidden z-50" onClick={toggleMenu}>
-           {isOpen ? (<X />) :( <Menu />)}
+        <div className="md:hidden lg:hidden z-50 justify-center" onClick={toggleMenu}>
+           {isOpen ? (<X className='fixed'/>) :( <Menu className='fixed'/>)}
         </div>
     </div>
   )

@@ -9,15 +9,15 @@ import mongodb from "./assets/mongodb.png"
 
 import Image from 'next/image'
 export default function Tech() {
-  const techs = [
-    { image: react},
-    { image: js},
-    { image: ts},
-    { image: node},
-    { image: tailwind},
-    { image: MySQL},
-    { image: mongodb},
-  ]
+    const techs = [
+      { image: react},
+      { image: js},
+      { image: ts},
+      { image: node},
+      { image: tailwind},
+      { image: MySQL},
+      { image: mongodb},
+    ]
   return (
     <div className="sm:mx-[40px] md:mx-[200px] pt-40 my-[50px]">
       <h1 className='text-[2.5rem]'>Tecnologias que trablho</h1>
