@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import ThemeToggle from './theme/ThemeToggle'
 import { Menu, X } from 'lucide-react';
-import resume from "./assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"
 import DownloadButton from './DownloadButton';
+
 export default function NavbarComponent() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
