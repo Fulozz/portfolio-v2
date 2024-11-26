@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import ThemeToggle from './theme/ThemeToggle'
 import { Menu, X } from 'lucide-react';
 import resume from "./assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"
-import DownloadLink from "react-download-link";
+import DownloadButton from './DownloadButton';
 export default function NavbarComponent() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -23,12 +23,7 @@ export default function NavbarComponent() {
         {
             name: 'Contato',
             href: '/contato',
-        },
-        {
-          name: 'Curriculo',
-          href: "./assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf",
-          download: true
-      }
+        }
     ]
   return (
     <div className="flex items-center justify-between  text-black dark:text-white h-20 py-2 px-8 mx-[60px] my-4 ">
@@ -36,11 +31,7 @@ export default function NavbarComponent() {
             <a href="#" className='font-semibold w-20'> <img src='/logo.png' /></a>
         </div>
         <div className=" items-center hidden md:flex lg:flex">
-        <DownloadLink
-                label="Curriculo"
-                filename={resume}
-                exportFile={() => Promise.resolve("cached data here …")}
-            />
+        <DownloadButton />
             {navItems.map((item, index) => {
                 return (
                     <a key={index} href={item.href} className='mx-4 font-normal text-slate-300 hover:text-slate-300' download={item.download}>{item.name}</a>
