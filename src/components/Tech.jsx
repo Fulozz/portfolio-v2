@@ -31,7 +31,7 @@ export default function Tech() {
       })}
       </div>
       <h2 className='text-[1.7rem] pt-5'>Experência</h2>
-      <span className='mx-3'>Trabalho a 1 ano e meio como desenvolvedor Full-Stack em projetos freelances desenvolvendo SASS, APIs internas, e Web-Softwares e landing pages.</span>
+      <span className='mx-3 text-[1rem]'>Trabalho a 1 ano e meio como desenvolvedor Full-Stack em projetos freelances desenvolvendo SASS, APIs internas, e Web-Softwares e landing pages.</span>
     </div>
   )
 }
