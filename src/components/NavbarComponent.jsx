@@ -34,7 +34,7 @@ export default function NavbarComponent() {
         <DownloadButton />
             {navItems.map((item, index) => {
                 return (
-                    <a key={index} href={item.href} className='mx-4 font-normal text-slate-300 hover:text-slate-300' download={item.download}>{item.name}</a>
+                    <a key={index} href={item.href} className='mx-4 font-normal text-black dark:text-white hover:text-slate-300' download={item.download}>{item.name}</a>
                 )
             })}
             <ThemeToggle />
