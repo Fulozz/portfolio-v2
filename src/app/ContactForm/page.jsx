@@ -3,7 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 
-const page = () => {
+export default function page() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     
     const onSubmit = (data) => {
@@ -68,5 +68,3 @@ const page = () => {
     </form>
   );
 }
-
-export default page
