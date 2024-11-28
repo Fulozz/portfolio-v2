@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import ThemeToggle from './theme/ThemeToggle'
 import { Menu, X } from 'lucide-react';
 import DownloadButton from './DownloadButton';
+import Image from 'next/image';
 
 export default function NavbarComponent() {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function NavbarComponent() {
   return (
     <div className="flex items-center justify-between  text-black dark:text-white h-20 py-2 px-8 mx-[60px] my-4 ">
         <div className='flex'>
-            <a href="#" className='font-semibold w-20'> <img src='/logo.png' /></a>
+            <a href="#" className='font-semibold w-20'> <Image src='/logo.png' /></a>
         </div>
         <div className=" items-center hidden md:flex lg:flex">
         <DownloadButton />
