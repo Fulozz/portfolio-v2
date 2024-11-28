@@ -14,9 +14,9 @@ export default function HomeComponent() {
         mercado.
       </p>
       {/* FORM PARA ENCAMINHAR PARA O MEU EMAIL informações necessarias: e-mail da pessoa, nome, número de telefone e informações sobre a empresa */}
-      <button className="bg-[#986dff] text-white text-[1.2rem] font-semibold rounded-sm w-[300px] h-12 my-3">
+      <a href="/form" className="bg-[#986dff] text-white text-[1.5rem] font-semibold rounded-md w-[300px] hover:w-[350px]  hover:transition-all hover:ease-in-out hover:delay-150 h-12 my-3  justify-center text-center flex items-center">
         Solicitar serviço
-      </button>
+      </a>
     </div>
   );
 }
