@@ -53,6 +53,7 @@ export default function Tech() {
       },
       
     ]
+
   return (
     <div className=" pt-40 my-[50px] bg-white h-[100vh] text-black">
       <div className="sm:mx-[40px] md:mx-[200px]">
@@ -62,7 +63,7 @@ export default function Tech() {
       { frontend.map((frontend, index) => {
         return(
         <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} > 
-          <Image src={frontend.image} alt="javascript" className='h-[70px] w-auto'/> 
+          <Image src={frontend.image} alt={frontend.name} className='h-[70px] w-auto'/> 
           <span className=' text-center'>{frontend.name}</span>
         </div>
         )
@@ -73,7 +74,8 @@ export default function Tech() {
       { backend.map((backend, index) => {
         return(
           <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} > 
-          <Image src={backend.image} alt="javascript" className='h-[70px] w-auto'/> 
+          <Image src={backend.image} alt={backend.name} className='h-[70px] w-auto'/>
+          <span className=' text-center'>{backend.name}</span> 
         </div>
         )
       })}
@@ -83,11 +85,15 @@ export default function Tech() {
       { db.map((db, index) => {
         return(
           <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} >  
-          <Image src={db.image} alt="javascript" className='h-[70px] w-auto'/> 
+          <Image src={db.image}  className='h-[70px] w-auto' alt={db.name}/>
+          <span className=' text-center'>{db.name}</span>
         </div>
         )
       })}
       </div>
+
+
+
       <h2 className='text-[1.7rem] pt-5'>Experência</h2>
       <h4 className='mx-3 text-[1.2rem]'>Trabalho a 1 ano e meio como desenvolvedor Full-Stack em projetos freelances desenvolvendo SASS, APIs internas, e Web-Softwares e landing pages.</h4>
       </div>
