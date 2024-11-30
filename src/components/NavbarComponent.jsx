@@ -29,7 +29,7 @@ export default function NavbarComponent() {
   return (
     <div className="flex items-center justify-between  text-black dark:text-white h-20 py-2 px-8 mx-[60px] my-4 ">
         <div className='flex'>
-            <a href="#" className='font-semibold w-20'> <Image src='/logo.png' /></a>
+            <a href="#" className='font-semibold w-20'> <Image src='/logo.png' height={40} width={40} alt="logo"/></a>
         </div>
         <div className=" items-center hidden md:flex lg:flex">
         <DownloadButton href={"http://fulozz.vercel.app/assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"} filename={"Thiago Silva Andrade - Desenvolvimento de Software.pdf"} />

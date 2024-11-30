@@ -6,32 +6,91 @@ import ts from "./assets/ts.png"
 import tailwind from "./assets/tailwind.png"
 import MySQL from "./assets/MySQL.png"
 import mongodb from "./assets/mongodb.png"
+import express from "./assets/express.png"
+import next from "./assets/next.png"
+import bootstrap from "./assets/bootstrap.png"
 
 import Image from 'next/image'
+
 export default function Tech() {
-    const techs = [
-      { image: react},
-      { image: js},
-      { image: ts},
-      { image: node},
-      { image: tailwind},
-      { image: MySQL},
-      { image: mongodb},
+
+    const frontend = [
+      { image: react,
+        name: 'React '
+      },
+      { image: js,
+        name: 'Javascript'
+      },
+      { image: ts,
+        name: 'Typescript'
+      },
+      { image: tailwind,
+        name: 'Tailwind CSS'
+      },
+      ,
+      { image: bootstrap,
+        name: 'Bootstrap'
+      },
+    ]
+    const backend = [
+      { image: node,
+        name: 'NodeJs'
+      },
+      { image: express,
+        name: 'Express'
+      },
+      { image: next,
+        name: 'Next.Js'
+      },
+
+    ]
+    const db = [
+      { image: MySQL,
+        name: 'MySQL'
+      },
+      { image: mongodb,
+        name: 'MongoDB'
+      },
+      
     ]
   return (
-    <div className="sm:mx-[40px] md:mx-[200px] pt-40 my-[50px]">
-      <h1 className='text-[2.5rem]'>Tecnologias que trablho</h1>
-      <div className="grid grid-cols-3 lg:grid-cols-7 gap-1">
-      { techs.map((tech, index) => {
+    <div className=" pt-40 my-[50px] bg-white h-[100vh] text-black">
+      <div className="sm:mx-[40px] md:mx-[200px]">
+      <h1 className='text-[2.5rem] text-center '>Tecnologias que trabalho</h1>
+      <h3 className='pb-2 text-[1.3rem]'>Front-End</h3>
+      <div className="flex pl-[30px]">
+      { frontend.map((frontend, index) => {
         return(
-        <div className='items-center mx-4 flex-1 ' key={index} > 
-          <Image src={tech.image} alt="javascript" className='h-[100px] w-auto'/> 
+        <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} > 
+          <Image src={frontend.image} alt="javascript" className='h-[70px] w-auto'/> 
+          <span className=' text-center'>{frontend.name}</span>
+        </div>
+        )
+      })}
+      </div>
+      <h3 className='pb-2 pt-4 text-[1.3rem]'>Back-End</h3>
+      <div className="flex pl-[30px]">
+      { backend.map((backend, index) => {
+        return(
+          <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} > 
+          <Image src={backend.image} alt="javascript" className='h-[70px] w-auto'/> 
+        </div>
+        )
+      })}
+      </div>
+      <h3 className='pb-2 pt-4 text-[1.3rem]'>Database</h3>
+      <div className="flex pl-[30px]">
+      { db.map((db, index) => {
+        return(
+          <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} >  
+          <Image src={db.image} alt="javascript" className='h-[70px] w-auto'/> 
         </div>
         )
       })}
       </div>
       <h2 className='text-[1.7rem] pt-5'>Experência</h2>
       <h4 className='mx-3 text-[1.2rem]'>Trabalho a 1 ano e meio como desenvolvedor Full-Stack em projetos freelances desenvolvendo SASS, APIs internas, e Web-Softwares e landing pages.</h4>
+      </div>
     </div>
   )
 }
