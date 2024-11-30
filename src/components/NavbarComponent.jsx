@@ -32,7 +32,7 @@ export default function NavbarComponent() {
             <a href="#" className='font-semibold w-20'> <Image src='/logo.png' /></a>
         </div>
         <div className=" items-center hidden md:flex lg:flex">
-        <DownloadButton />
+        <DownloadButton href={"http://fulozz.vercel.app/assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"} filename={"Thiago Silva Andrade - Desenvolvimento de Software.pdf"} />
             {navItems.map((item, index) => {
                 return (
                     <a key={index} href={item.href} className='mx-4 font-normal text-black dark:text-white hover:text-slate-300' download={item.download}>{item.name}</a>
