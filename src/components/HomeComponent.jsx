@@ -1,4 +1,5 @@
 import React from "react";
+import PopupForm from "./PopupForm";
 
 export default function HomeComponent() {
   return (
@@ -14,9 +15,7 @@ export default function HomeComponent() {
         mercado.
       </p>
       {/* FORM PARA ENCAMINHAR PARA O MEU EMAIL informações necessarias: e-mail da pessoa, nome, número de telefone e informações sobre a empresa */}
-      <a href="/ContactForm" className="bg-[#986dff] text-white text-[1.5rem] font-semibold rounded-md w-[300px] hover:w-[350px]  hover:transition-all hover:ease-in-out hover:delay-150 h-12 my-3  justify-center text-center flex items-center">
-        Solicitar serviço
-      </a>
+      <PopupForm />
     </div>
   );
 }
