@@ -1,3 +1,44 @@
 # FAZER PAGINA DE CARD para apresentação inicial pessoal 
 
 # Nome, foto, número de contato e email, junto com algumas informações
+
+
+
+
+
+<div className="flex items-center justify-between  text-black dark:text-white h-20 py-2 px-8 mx-[60px] my-4 ">
+        <div className='flex'>
+            <a href="#" className='font-semibold w-20'> <Image src='/logo.png' height={40} width={40} alt="logo"/></a>
+        </div>
+        <div className=" items-center hidden md:flex lg:flex">
+        <DownloadButton href={"http://fulozz.vercel.app/assets/Thiago Silva Andrade - Desenvolvimento de Software.pdf"} filename={"Thiago Silva Andrade - Desenvolvimento de Software.pdf"} />
+            {navItems.map((item, index) => {
+                return (
+                    <link key={index} href={item.href} className='mx-4 font-normal text-black dark:text-white hover:text-slate-300' download={item.download}>{item.name}</link>
+                )
+            })}
+            <ThemeToggle />
+        </div>
+        <div className={`fixed top-0 left-0 w-full h-[90px] md:hidden bg-gray-900/90 z-50 transition duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'}`}>
+        
+          <div className="flex flex-col items-center justify-center text-center h-full">
+            <ul className="space-y-4 items-center">
+              {navItems.map((item, index) => (
+                <li key={index} className='pb-4'>
+                  <link
+                    href={item.href}
+                    className="text-white hover:bg-gray-700 hover:text-purple-500 px-3 py-2 rounded-md text-xl font-medium mt-4"
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </link>
+                </li>
+              ))}
+            </ul>
+            <ThemeToggle />
+          </div>
+        </div>
+        <div className="md:hidden lg:hidden z-50 justify-center" onClick={toggleMenu}>
+           {isOpen ? (<X className='fixed'/>) :( <Menu className='fixed'/>)}
+        </div>
+    </div>
