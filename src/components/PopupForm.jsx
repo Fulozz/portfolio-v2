@@ -19,24 +19,89 @@ export default function PopupForm() {
         console.log(data);
         setShowModal(false);
     }
+  
+    const formFields = [
+      {
+        id: "name",
+        inputType: "text",
+        required: "true",
+        label: "Nome Completo",
+        placeholder: "Descreva o que precisa",
+        errorMessage: "Nome é obrigatório",
+        className: ""
+      },
+      {
+        id: "phone",
+        inputType: "text",
+        required: "true",
+        label: "Telefone",
 
-   
+        errorMessage: "Telefone é obrigatório",
+        className: ""
+      },
+      {
+        id: "email",
+        inputType: "email",
+        required: "true",
+        label: "E-mail",
+
+        errorMessage: "E-mail é obrigatório",
+        className: ""
+      },
+      {
+        id: "company",
+        inputType: "text",
+        required: "true",
+        label: "Empresa",
+
+        errorMessage: "Empresa é obrigatório",
+        className: ""
+      },
+      {
+        id: "message",
+        inputType: "area",
+        required: "true",
+        label: "Mensagem",
+        placeholder: "Descreva o que precisa",
+        errorMessage: "Mensagem é obrigatório",
+        className: "h-20"
+      }
+    ]
+
   return (
     <>
+      {showModal === true && (
+        <div
+          className="fixed inset-0 z-40 bg-black/50" // Adjust opacity as needed
+        />
+      )}
+     
       <button onClick={() => setShowModal(true)}>Abrir Formulário</button>
       {showModal && (
+      <>
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-md">
+          <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
             <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="mb-4">
-                  <label htmlFor="name" className='text-black'>Nome Completo</label>
-                  <input
-                    {...register("name", { required: true })}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  {errors.name && <span>Este campo é obrigatório</span>}
-                </div>
-
+              
+                  {
+                    formFields.map((field, index) => {
+                      return (
+                        <div className="mb-4" key={index}>
+                          <label htmlFor="name" className="block text-gray-800 text-sm font-bold mb-2">{field.label}</label>
+                          <input
+                            {...register(`${field.id}`, { required: field.required })}
+                            type={field.inputType}
+                            className={`shadow appearance-none border rounded w-full py-2 px-3 ml-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline `}
+                            placeholder={field.placeholder}
+                          />
+                          {errors.name && <span className="dark:text-black">* {field.errorMessage}</span>}
+                        </div>
+                      )
+                    })
+                  }
+                  <textarea id="w3review" name="w3review" rows="4" cols="50">
+                            
+                            </textarea>
               {/* Outros campos do formulário... */}
               <button
                 type="submit"
@@ -47,6 +112,7 @@ export default function PopupForm() {
             </form>
           </div>
         </div>
+        </>
       )}
     </>
   );
