@@ -55,14 +55,14 @@ export default function Tech() {
     ]
 
   return (
-    <div className=" pt-40 my-[50px] bg-white h-[100vh] text-black">
+    <div className=" pt-40 my-[50px] bg-white h-full text-black">
       <div className="sm:mx-[40px] md:mx-[200px]">
       <h1 className='text-[2.5rem] text-center '>Tecnologias que trabalho</h1>
       <h3 className='pb-2 text-[1.3rem]'>Front-End</h3>
-      <div className="flex pl-[30px]">
+      <div className="pl-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
       { frontend.map((frontend, index) => {
         return(
-        <div className='hover:transform hover:translate-y-[-5px]  flex flex-col items-center justify-center content-center p-8 mr-3 rounded-lg shadow-md w-[250px] shadow-black border-2 border-gray-400 hover:border-black transition hover:border-2 ' key={index} > 
+        <div className="flex flex-col items-center justify-center content-center p-8 rounded-lg shadow-md w-[250px]  hover:shadow-lg hover:border-black transition hover:border-2 border border-gray-400" key={index} > 
           <Image src={frontend.image} alt={frontend.name} className='h-[70px] w-auto'/> 
           <span className=' text-center'>{frontend.name}</span>
         </div>
