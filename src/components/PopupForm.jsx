@@ -27,7 +27,7 @@ export default function PopupForm() {
         inputType: "text",
         required: "true",
         label: "Nome Completo",
-        placeholder: "",
+        placeholder: "Exemplo da Silva",
         errorMessage: "Nome é obrigatório",
         className: ""
       },
@@ -81,11 +81,12 @@ export default function PopupForm() {
         />
       )}
      
-      <button onClick={() => setShowModal(true)}>Abrir Formulário</button>
+      <button onClick={() => setShowModal(true)} className="bg-[#986dff] text-white text-[1.5rem] font-semibold rounded-md w-[300px] hover:w-[350px]  hover:transition-all hover:ease-in-out hover:delay-150 h-12 my-3  justify-center text-center flex items-center">Solicitar serviço</button>
       {showModal && (
       <>
         <div className="fixed inset-0 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
+            <h1 className=" flex text-black text-[2.7rem] text-center mb-2">FICHA DE CONTATO</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               
                   {
@@ -96,7 +97,7 @@ export default function PopupForm() {
                           <field.tag
                             {...register(`${field.id}`, { required: field.required })}
                             type={field.inputType}
-                            className={`shadow appearance-none border rounded w-full py-2 px-3 ml-2 text-gray-300 leading-tight focus:outline-none focus:shadow-outline `}
+                            className={`shadow appearance-none border rounded w-full py-2 px-3 ml-2 text-gray-300 leading-tight focus:outline-none focus:shadow-outline ${field.className}`}	
                             placeholder={field.placeholder}
                           />
                           {errors.name && <span className="dark:text-black">* {field.errorMessage}</span>}
@@ -106,12 +107,16 @@ export default function PopupForm() {
                   }
                 
               {/* Outros campos do formulário... */}
-              <button
-                type="submit"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Enviar
-              </button>
+
+              <div className="flex justify-between ml-2">
+                <button onClick={() => setShowModal(false)} className="text-white bg-red-500 hover:bg-red-700 font-bold py-2 px-4 rounded">Sair</button>
+                <button
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded"
+                >
+                  Enviar
+                </button>
+              </div>
             </form>
           </div>
         </div>

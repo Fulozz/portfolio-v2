@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <section className="">
       <NavbarComponent />
-        <div className="flex h-[98vh]">
+        <div className="flex h-[90vh]">
           <HomeComponent />
           <HomeImage />
         </div>
