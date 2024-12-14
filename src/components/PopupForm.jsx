@@ -23,42 +23,47 @@ export default function PopupForm() {
     const formFields = [
       {
         id: "name",
+        tag: "input",
         inputType: "text",
         required: "true",
         label: "Nome Completo",
-        placeholder: "Descreva o que precisa",
+        placeholder: "",
         errorMessage: "Nome é obrigatório",
         className: ""
       },
       {
         id: "phone",
+        tag: "input",
         inputType: "text",
         required: "true",
         label: "Telefone",
-
+        placeholder: "(00) 00000-0000",
         errorMessage: "Telefone é obrigatório",
         className: ""
       },
       {
         id: "email",
+        tag: "input",
         inputType: "email",
         required: "true",
         label: "E-mail",
-
+        placeholder: "exemplo@compania.com.br",
         errorMessage: "E-mail é obrigatório",
         className: ""
       },
       {
         id: "company",
+        tag: "input",
         inputType: "text",
         required: "true",
         label: "Empresa",
-
+        placeholder: "exemplo ltda",
         errorMessage: "Empresa é obrigatório",
         className: ""
       },
       {
         id: "message",
+        tag: "textarea",
         inputType: "area",
         required: "true",
         label: "Mensagem",
@@ -88,10 +93,10 @@ export default function PopupForm() {
                       return (
                         <div className="mb-4" key={index}>
                           <label htmlFor="name" className="block text-gray-800 text-sm font-bold mb-2">{field.label}</label>
-                          <input
+                          <field.tag
                             {...register(`${field.id}`, { required: field.required })}
                             type={field.inputType}
-                            className={`shadow appearance-none border rounded w-full py-2 px-3 ml-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline `}
+                            className={`shadow appearance-none border rounded w-full py-2 px-3 ml-2 text-gray-300 leading-tight focus:outline-none focus:shadow-outline `}
                             placeholder={field.placeholder}
                           />
                           {errors.name && <span className="dark:text-black">* {field.errorMessage}</span>}
@@ -99,9 +104,7 @@ export default function PopupForm() {
                       )
                     })
                   }
-                  <textarea id="w3review" name="w3review" rows="4" cols="50">
-                            
-                            </textarea>
+                
               {/* Outros campos do formulário... */}
               <button
                 type="submit"
