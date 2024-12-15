@@ -56,9 +56,9 @@ export default function Tech() {
 
   return (
     <div className=" pt-40 my-[50px] bg-white h-full text-black">
-      <div className="sm:mx-[40px] md:mx-[200px]">
+      <div className="sm:mx-[40px] md:mx-[200px] flex flex-col justify-center items-center md:justify-start md:items-start">
       <h1 className='text-[2.5rem] text-center '>Tecnologias que trabalho</h1>
-      <h3 className='pb-2 text-[1.3rem]'>Front-End</h3>
+      <h3 className='pb-2 text-[1.3rem]  pl-2 md:pl-0'>Front-End</h3>
       <div className="pl-[30px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
       { frontend.map((frontend, index) => {
         return(

@@ -19,15 +19,15 @@ export default function NavbarComponent() {
         },
         {
             name: 'Sobre',
-            href: '/sobre',
+            href: '#sobre',
         },
         {
             name: 'Projetos',
-            href: '/projetos'
+            href: '#projetos'
         },
         {
             name: 'Contato',
-            href: '/contato',
+            href: '#contato',
         }
     ]
   return (
@@ -74,7 +74,7 @@ export default function NavbarComponent() {
           {
             navItems.map((item, index)=> {
               return(
-                <Link href="/" key={index} className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-[1.5rem] font-medium">
+                <Link  onClick={()=> setIsOpen(false) } href={item.href} key={index} className="block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-[1.5rem] font-medium">
                   {item.name}
               </Link>
               )
