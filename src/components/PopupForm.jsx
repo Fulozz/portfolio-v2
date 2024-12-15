@@ -85,7 +85,7 @@ export default function PopupForm() {
       {showModal && (
       <>
         <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-md w-[500px]">
+          <div className="bg-white p-6 rounded-lg shadow-md w-[500px] sm:w-screen">
             <h1 className=" flex text-black text-[2.7rem] text-center mb-2">FICHA DE CONTATO</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
               
