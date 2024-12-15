@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     <html lang="pt" suppressHydrationWarning>
       <body
         cz-shortcut-listen="true" 
-        className={`${geistSans.variable} ${geistMono.variable} antialiased  text-black dark:text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  text-black dark:text-white bg-red-500`}
       >
         <Providers>
           {children}
