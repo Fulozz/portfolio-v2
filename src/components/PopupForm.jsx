@@ -2,11 +2,11 @@
 
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import dotenv from 'dotenv';
-
 
 
 export default function PopupForm() {
+
+
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -17,20 +17,21 @@ export default function PopupForm() {
   });
 
 
-  dotenv.config({
-      path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
-  })
-  
  
-
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        // CRIAR ENVIO PARA O MEU E-MAIL COM O TITULO DE NOME DA PESSOA E EMPRESA
+
+
+        sendEmail(data);
+        
+        
         console.log(data);
         setShowModal(false);
     }
   
+
+
     const formFields = [
       {
         id: "name",
@@ -92,7 +93,7 @@ export default function PopupForm() {
         />
       )}
      
-      <button onClick={() => setShowModal(true)} className="bg-[#986dff] text-white text-[1.5rem] font-semibold rounded-md w-[300px] hover:w-[350px]  hover:transition-all hover:ease-in-out hover:delay-150 h-12 my-3  justify-center text-center flex items-center">Solicitar serviço</button>
+      <button onClick={() => setShowModal(true)} className="bg-[#D9C634] text-black text-[1.5rem] font-semibold rounded-md w-[300px] hover:w-[350px]  hover:transition-all hover:ease-in-out hover:delay-150 h-12 my-3  justify-center text-center flex items-center">Solicitar serviço</button>
       {showModal && (
       <>
         <div className="fixed inset-0 flex items-center justify-center z-50">

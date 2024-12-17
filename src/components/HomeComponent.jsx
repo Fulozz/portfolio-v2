@@ -7,7 +7,7 @@ export default function HomeComponent() {
       <h1 className="pt-[200px] lg:text-[2.2rem] md:text-[2.2rem] text-[1.8rem] text-medium  sm:justify-center text-center md:text-left sm:items-center text-black dark:text-white  ">
         {" "}
         Ajudando empresas a construirem <br />
-        <span className="text-[#986dff]"> produtos digitais </span> de forma
+        <span className="text-[#D9C634]"> produtos digitais </span> de forma
         moderna e de alta qualidade
       </h1>
       <p className="text-gray-500 text-medium text-[1.5rem] text-center md:text-left sm:items-center">
