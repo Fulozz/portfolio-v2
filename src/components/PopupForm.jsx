@@ -2,6 +2,9 @@
 
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import dotenv from 'dotenv';
+
+
 
 export default function PopupForm() {
   const [showModal, setShowModal] = useState(false);
@@ -12,6 +15,14 @@ export default function PopupForm() {
     company: '',
     description: '',
   });
+
+
+  dotenv.config({
+      path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
+  })
+  
+ 
+
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
