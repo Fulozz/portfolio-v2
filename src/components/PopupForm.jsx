@@ -19,8 +19,6 @@ export default function PopupForm() {
           phone: data.phone,
           message: data.message
         })
-        
-        console.log(data);
         setShowModal(false);
     }
   
