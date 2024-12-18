@@ -2,28 +2,24 @@
 
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-
+import { sendEmail } from '@/utils/sendEmail';
 
 export default function PopupForm() {
 
 
   const [showModal, setShowModal] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    company: '',
-    description: '',
-  });
-
-
- 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
 
 
-        sendEmail(data);
+        sendEmail({
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            company: data.company,
+            message: data.message
+        });
         
         
         console.log(data);
