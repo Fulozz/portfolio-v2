@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-import { sendEmail } from '@/utils/sendEmail';
+import APILead from "@/utils/API.lead"
 
 export default function PopupForm() {
 
@@ -12,15 +12,13 @@ export default function PopupForm() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
 
-
-        sendEmail({
-            name: data.name,
-            phone: data.phone,
-            email: data.email,
-            company: data.company,
-            message: data.message
-        });
-        
+        APILead().post("/mailer", {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          message: data.message
+        })
         
         console.log(data);
         setShowModal(false);
