@@ -55,7 +55,7 @@ export default function Tech() {
     ]
 
   return (
-    <div className=" pt-40 my-[50px] bg-white h-full text-black">
+    <div className=" pt-20 pb-20 my-[50px] bg-white h-full text-black">
       <div className="sm:mx-[40px] md:mx-[200px] flex flex-col justify-center items-center md:justify-start md:items-start">
       <h1 className='text-[2.5rem] text-center '>Tecnologias que trabalho</h1>
       <h3 className='pb-2 text-[1.3rem]  pl-2 md:pl-0'>Front-End</h3>
@@ -91,11 +91,6 @@ export default function Tech() {
         )
       })}
       </div>
-
-
-
-      <h2 className='text-[1.7rem] pt-5'>Experência</h2>
-      <h4 className='mx-3 text-[1.2rem]'>Trabalho a 1 ano e meio como desenvolvedor Full-Stack em projetos freelances desenvolvendo SASS, APIs internas, e Web-Softwares e landing pages.</h4>
       </div>
     </div>
   )
