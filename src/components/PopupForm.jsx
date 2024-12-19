@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import APILead from "@/utils/API.lead"
+import toast from 'react-hot-toast';
 
 export default function PopupForm() {
 
@@ -18,6 +19,9 @@ export default function PopupForm() {
           company: data.company,
           phone: data.phone,
           message: data.message
+        }).then((responde)=>{
+          toast.success("Muito obrigado! Em breve entraremos em contato.")
+          console.log(responde)
         })
         setShowModal(false);
     }
