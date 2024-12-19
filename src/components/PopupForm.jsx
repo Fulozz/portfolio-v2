@@ -20,7 +20,9 @@ export default function PopupForm() {
           phone: data.phone,
           message: data.message
         }).then((responde)=>{
-          toast.success("Muito obrigado! Em breve entraremos em contato.")
+          toast.success("Muito obrigado! Em breve entraremos em contato.", {
+            duration: 1000,
+          })
           console.log(responde)
         })
         setShowModal(false);
