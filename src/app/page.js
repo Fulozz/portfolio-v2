@@ -13,7 +13,7 @@ export default function Home() {
           <HomeImage />
         </div>
         <Tech />
-        <Experience />
+        {/* <Experience /> */}
     </section>
   );
 }
