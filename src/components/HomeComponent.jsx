@@ -4,7 +4,7 @@ import PopupForm from "./PopupForm";
 export default function HomeComponent() {
   return (
     <div className="flex flex-col sm:mx-[40px] md:mx-[200px]  md:w-[35vw] sm:justify-center items-center ">
-      <h1 className="pt-[200px] lg:text-[2.2rem] md:text-[2.2rem] text-[1.8rem] text-medium  sm:justify-center text-center md:text-left sm:items-center text-black dark:text-white  ">
+      <h1 className="pt-[200px] lg:text-[2.2rem] md:text-[2.2rem] text-[1.8rem] text-medium  sm:justify-center text-center md:text-left sm:items-center text-white  ">
         {" "}
         Ajudando empresas a construirem <br />
         <span className="text-[#D9C634]"> produtos digitais </span> de forma
